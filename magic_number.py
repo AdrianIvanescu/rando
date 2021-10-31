@@ -1,6 +1,6 @@
 import random
 number = random.randint(1,101)
-# print(number)
+print(number)
 
 for answer in range(1,100):
     answer = int(input('Guess a number between 1-100: '))
