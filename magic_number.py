@@ -17,31 +17,6 @@ def guess_number_user():
             print(f">>You win! The magic number is: {Fore.GREEN}{answer}{Style.RESET_ALL}")
             break
 
-
-    initial_answer = answer = generate_random(1,100)
-    print (f'initial answer: {initial_answer}')
-    answer_set  = set()
-    
-    while answer != number:
-        answer_set.add(answer)
-        if answer > number:
-            answer = generate_random(1,answer-1)
-            if answer in answer_set:
-                answer = generate_random(1,answer-1)
-            answer_set.add(answer)
-            print(f"Try again. Go lower... revised answer: {answer}")
-        
-        if answer < number:
-            answer = generate_random(answer+1,100)
-            if answer in answer_set:
-                answer = generate_random(answer+1,100)
-            answer_set.add(answer)
-            print(f"Try again. Go higher... revised answer: {answer}")
-        
-        if answer == number:
-            print(f">>You win! The mugic number is: {answer}")
-            break
-
 def print_limit(lower_limit,higher_limit):
     print (f'>>lower_limit: {lower_limit}')
     print (f'>>higher_limit: {higher_limit}')
@@ -73,7 +48,7 @@ def guess_number_auto():
             print_win(answer)
             break
 
-# guess_number_user()
-guess_number_auto()
+guess_number_user()
+# guess_number_auto()
 
 
