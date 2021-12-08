@@ -48,7 +48,7 @@ def guess_number_auto():
             print_win(answer)
             break
 
-guess_number_user()
-# guess_number_auto()
+# guess_number_user()
+guess_number_auto()
 
 
