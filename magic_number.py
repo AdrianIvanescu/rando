@@ -1,3 +1,6 @@
+# 
+# guess a number between 1 and 100 - via user input / auto
+# 
 import random
 from colorama.ansi import Fore, Style
 
