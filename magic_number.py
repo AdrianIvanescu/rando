@@ -21,8 +21,8 @@ def print_limit(lower_limit,higher_limit):
     print (f'>>lower_limit: {lower_limit}')
     print (f'>>higher_limit: {higher_limit}')
 
-def print_number(number):
-    print(f"Try again. Go lower... revised answer: {Fore.RED}{number}{Style.RESET_ALL}")
+def print_number(number,limit):
+    print(f"Try again. Go {limit}... revised answer: {Fore.RED}{number}{Style.RESET_ALL}")
 
 def print_win(number):
     print(f">>You win! The magic number is: {Fore.GREEN}{number}{Style.RESET_ALL}")
@@ -37,11 +37,11 @@ def guess_number_auto():
         if answer > number:
             higher_limit = answer - 1
             answer = generate_random(lower_limit,higher_limit)
-            print_number(answer)        
+            print_number(answer,'lower')        
         if answer < number:
             lower_limit = answer + 1
             answer = generate_random(lower_limit,higher_limit)
-            print_number(answer)
+            print_number(answer,'higher')
         print('-------------------------------------------')
         
         if answer == number:
