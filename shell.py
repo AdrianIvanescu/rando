@@ -1,6 +1,6 @@
 from cmd import Cmd
-from magic_number import magic_number_auto
-from magic_number import magic_number_user
+from magic_number.magic_number_auto import guess_number_auto
+from magic_number.magic_number_user import guess_number_user
  
 # this needs to be taken from somewhere - maybe from github
 toolversion = "v0.1.0."
@@ -22,13 +22,13 @@ class MyPrompt(Cmd):
         print("Type (?) or (help) - to list commands")
     
     def do_guess_auto(self, inp):
-        magic_number_auto.guess_number_auto()
+        guess_number_auto()
 
     def help_guess_auto(self):
         print('generate random number and let the "machine" to guess it')
 
     def do_guess_user(self, inp):
-        magic_number_user.guess_number_user()
+        guess_number_user()
 
     def help_guess_user(self):
         print('generate random number and let the "user" to guess it')    

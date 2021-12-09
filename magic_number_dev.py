@@ -1,4 +1,4 @@
 #!/usr/bin/env python3
-from magic_number import magic_number_auto
+from magic_number import magic_number
 
-magic_number_auto.main()
+magic_number.main()
