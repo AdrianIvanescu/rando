@@ -1,0 +1,14 @@
+{
+    // https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "magic_number",
+        "type": "python",
+        "request": "launch",
+        "program": "magic_number_dev.py",
+        "console": "integratedTerminal"
+      }
+    ]
+  }
+  
