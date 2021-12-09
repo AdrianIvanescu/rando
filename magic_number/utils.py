@@ -14,5 +14,3 @@ def print_number(number,limit):
 def print_win(number):
     print(f">>You win! The magic number is: {Fore.GREEN}{number}{Style.RESET_ALL}")
 
-def reset_limit(self,limit):
-    return limit
