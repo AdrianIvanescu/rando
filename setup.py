@@ -14,19 +14,8 @@ GITHUB_REPOSITORY = "rando"
 GITHUB_PATH = "/".join([GITHUB_USER, GITHUB_REPOSITORY])
 PROJECT_URL = "/".join([GITHUB_URL, GITHUB_PATH])
 MIN_PY_VERSION = ">=3.7"
-REQUIRES = [
-    "tabulate>=0.8.8",  # pretty tables
-    "pyyaml>=0.2.5",
-    "beautifulsoup4>=4.10",  # webscrap
-    "pexpect>=4.8",  # ssh
-    "dateparser>=0.7.4",
-    "keyring",
-    "pyotp",
-    "dogpile.cache",
-    "requests",
-    "untangle",
-    "pendulum>2.0",
-]
+# REQUIRES = [
+# ]
 setup(
     name=PROJECT_PACKAGE_NAME,
     version=deb_ver.__version__,
@@ -35,7 +24,7 @@ setup(
     url=PROJECT_URL,
     packages=PACKAGES,
     python_requires=MIN_PY_VERSION,
-    install_requires=REQUIRES,
+    # install_requires=REQUIRES,
     entry_points={
         "console_scripts": ["magic=magic_number:main"]
     },
