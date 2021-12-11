@@ -1,3 +1,6 @@
+'''
+helper functions
+'''
 import random
 from colorama.ansi import Fore, Style
 
@@ -16,3 +19,7 @@ def print_win(number):
 
 def print_line():
     print('-------------------------------------------')
+
+def didWeGuess(number, answer) -> bool:
+    if answer == number:
+        return True 

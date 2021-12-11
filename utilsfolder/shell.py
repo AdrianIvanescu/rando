@@ -1,3 +1,6 @@
+'''
+creates a magic_number shell
+'''
 from cmd import Cmd
 from magic_number.magic_number_auto import MagicNumberAuto
 from magic_number.magic_number_user import MagicNumberUser
@@ -25,15 +28,19 @@ class MyPrompt(Cmd):
         number = MagicNumberAuto(1,100)
         number.guess_number_auto()
 
-    def help_guess_auto(self):
-        print('generate random number and let the "machine" to guess it')
+    def help_guess_auto(self) -> str:
+        message = ('generate random number and let the "machine" to guess it')
+        print(message)
+        return message
 
     def do_guess_user(self, inp):
         number = MagicNumberUser(1,100)
         number.guess_number_user()
 
-    def help_guess_user(self):
-        print('generate random number and let the "user" to guess it')    
+    def help_guess_user(self) -> str:
+        message =  ('generate random number and let the "user" to guess it')
+        print(message)
+        return message   
 
     def emptyline(self):
          pass

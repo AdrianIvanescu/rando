@@ -1,7 +1,7 @@
-# 
-# guess a number between 1 and 100 << user input version >>
-# 
-from utilsfolder.utils  import generate_random, print_win
+'''
+guess a number between 1 and 100 << user input version >>
+'''
+from utilsfolder.utils  import generate_random, print_win, didWeGuess
 from colorama.ansi import Fore, Style
 
 def isBounded(answer) -> bool:
@@ -25,6 +25,6 @@ class MagicNumberUser:
                 print("Try again. Go lower...")
             if ( answer < number and isBounded(answer) and isinstance(answer,int)):
                 print("Try again. Go higher...")
-            if ( answer == number and isBounded(answer) and isinstance(answer,int)):
+            if didWeGuess(number,answer):
                 print_win(answer)
                 break

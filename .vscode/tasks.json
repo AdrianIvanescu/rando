@@ -1,0 +1,48 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Precommit",
+        "type": "shell",
+        "command": "pre-commit run --all-files",
+        "group": {
+          "kind": "test",
+          "isDefault": true
+        },
+        "presentation": {
+          "reveal": "always",
+          "panel": "new"
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "Tox",
+        "type": "shell",
+        "command": "tox",
+        "group": {
+          "kind": "test",
+          "isDefault": true
+        },
+        "presentation": {
+          "reveal": "always",
+          "panel": "new"
+        },
+        "problemMatcher": []
+      },
+      {
+        "label": "Unittest coverage",
+        "type": "shell",
+        "command": "tox -e unittest",
+        "group": {
+          "kind": "test",
+          "isDefault": true
+        },
+        "presentation": {
+          "reveal": "always",
+          "panel": "new"
+        },
+        "problemMatcher": []
+      }
+    ]
+  }
+  
