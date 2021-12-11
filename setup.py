@@ -27,6 +27,6 @@ setup(
     python_requires=MIN_PY_VERSION,
     install_requires=REQUIRES,
     entry_points={
-        "console_scripts": ["magic_number=magic_number:main"]
+        "console_scripts": ["magic_number=magic_number:magic_number:main"]
     },
 )
