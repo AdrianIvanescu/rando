@@ -9,12 +9,19 @@ class MagicNumberAuto:
     def __init__(self,lower_limit,higher_limit):
         self.lower_limit = lower_limit
         self.higher_limit = higher_limit
-
+    
+    def didWeGuess(self, number, answer) -> bool:
+        if answer == number:
+            return True
+    
     def guess_number_auto(self):
         number = generate_random(self.lower_limit,self.higher_limit)
         answer = generate_random(self.lower_limit,self.higher_limit)
         print (f'initial answer: {Fore.YELLOW}{answer}{Style.RESET_ALL}')
 
+        if self.didWeGuess(number,answer):
+            print_win(answer)
+        
         while answer != number:
             if answer > number:
                 self.higher_limit = answer - 1
@@ -27,9 +34,6 @@ class MagicNumberAuto:
                 print_number(answer,'higher')
                 print_line()
             
-            if answer == number:
+            if self.didWeGuess(number,answer):
                 print_win(answer)
                 break
-
-
-
