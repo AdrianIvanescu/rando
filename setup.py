@@ -2,7 +2,7 @@
 from setuptools import find_namespace_packages
 from setuptools import setup
 
-import version as deb_ver
+from utilsfolder import version as deb_ver
 
 PACKAGES = find_namespace_packages(exclude=["tests", "tests.*"])
 PROJECT_PACKAGE_NAME = "magic_number"
