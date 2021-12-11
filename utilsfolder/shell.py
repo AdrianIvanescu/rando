@@ -1,12 +1,12 @@
 '''
 creates a magic_number shell
 '''
+from utilsfolder import version
 from cmd import Cmd
 from magic_number.magic_number_auto import MagicNumberAuto
 from magic_number.magic_number_user import MagicNumberUser
  
-# this needs to be taken from somewhere - maybe from github
-toolversion = "v0.1.0."
+toolversion = f"v{version.__version__}"
 
 class MyPrompt(Cmd):
     prompt = 'magic> '
@@ -22,7 +22,7 @@ class MyPrompt(Cmd):
     def default(self, inp):
         if inp == 'x' or inp == 'q':
             return self.do_exit(inp)
-        print("Type (?) or (help) - to list commands")
+        print(self.intro)
     
     def do_guess_auto(self, inp):
         number = MagicNumberAuto(1,100)

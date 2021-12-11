@@ -13,18 +13,23 @@ class MagicNumberUser:
         self.higher_limit = higher_limit
 
     def guess_number_user(self):
+        answer_int = 0
         number = int(generate_random(self.lower_limit,self.higher_limit))
-        for answer in range(1,100):
+        while (not didWeGuess(number,answer_int)):
+            answer = input('Guess a number between 1-100 (or q to quit): ')
+            if answer == 'q':
+                break   
             try:
-                answer = int(input('Guess a number between 1-100: '))
-                if (not isBounded(answer)):
+                answer_int = int(answer)
+                if (not isBounded(answer_int)):
                     print ('>> input between [1..100]')
             except ValueError as e:
-                print('>> this should be an integer')
-            if ( answer > number and isBounded(answer) and isinstance(answer,int)):
+                print('>> this should be an integer')            
+            
+            if ( answer_int > number and isBounded(answer_int) and isinstance(answer_int,int)):
                 print("Try again. Go lower...")
-            if ( answer < number and isBounded(answer) and isinstance(answer,int)):
+            if ( answer_int < number and isBounded(answer_int) and isinstance(answer_int,int)):
                 print("Try again. Go higher...")
-            if didWeGuess(number,answer):
-                print_win(answer)
+            if didWeGuess(number,answer_int):
+                print_win(answer_int)
                 break
