@@ -14,8 +14,9 @@ GITHUB_REPOSITORY = "rando"
 GITHUB_PATH = "/".join([GITHUB_USER, GITHUB_REPOSITORY])
 PROJECT_URL = "/".join([GITHUB_URL, GITHUB_PATH])
 MIN_PY_VERSION = ">=3.7"
-# REQUIRES = [
-# ]
+REQUIRES = [
+    "colorama>=0.4.4",
+]
 setup(
     name=PROJECT_PACKAGE_NAME,
     version=deb_ver.__version__,
@@ -24,7 +25,7 @@ setup(
     url=PROJECT_URL,
     packages=PACKAGES,
     python_requires=MIN_PY_VERSION,
-    # install_requires=REQUIRES,
+    install_requires=REQUIRES,
     entry_points={
         "console_scripts": ["magic=magic_number:main"]
     },
