@@ -5,6 +5,7 @@ from utilsfolder import version
 from cmd import Cmd
 from magic_number.magic_number_auto import MagicNumberAuto
 from magic_number.magic_number_user import MagicNumberUser
+from db_layer.create_table import MagicTable
  
 toolversion = f"v{version.__version__}"
 
@@ -41,6 +42,25 @@ class MyPrompt(Cmd):
         message =  ('generate random number and let the "user" to guess it')
         print(message)
         return message   
+
+    def do_create_table(self,inp):
+        table = MagicTable('magic_number','run_times')
+        table.open_db_connection()
+        table.create_table()
+        table.commit_db_change()
+        table.close_db_connection()
+    
+    def help_create_table(self):
+        print('create a sqlite3 table: magic_db.run_times')
+
+    def do_drop_table(self,inp):
+        table = MagicTable('magic_number','run_times')
+        table.open_db_connection()
+        table.drop_table()
+        table.close_db_connection()
+    
+    def help_drop_table(self):
+        print('drop a sqlite3 table: magic_db.run_times')    
 
     def emptyline(self):
          pass
