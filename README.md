@@ -3,7 +3,7 @@
 `magic_number` - it's a `CLI-based` number guessing game between 1-100
 
 ### Installation
-- for testing purposes - do: 
+- for dev/testing purposes - do: 
 1. clone:
 ```sh
 git clone https://github.com/AdrianIvanescu/rando.git
@@ -12,7 +12,7 @@ git clone https://github.com/AdrianIvanescu/rando.git
 ```sh
 python3 magic_number_dev.py
 ```
-- to install:
+- to install (the latest stable release):
 ```sh
 pip install -I git+https://github.com/AdrianIvanescu/rando.git#egg=magic_number
 ```
