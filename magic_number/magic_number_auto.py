@@ -21,7 +21,7 @@ class MagicNumberAuto:
         if didWeGuess(number,answer):
             num_of_tries += 1
             print_win(answer)
-            save_to_db(number, initial_answer, num_of_tries,'auto')
+            save_to_db(number, num_of_tries,'auto')
         
         while answer != number:
             if answer > number:
@@ -39,5 +39,5 @@ class MagicNumberAuto:
             
             if didWeGuess(number,answer):
                 print_win(answer)
-                save_to_db(number, initial_answer, num_of_tries,'auto')
+                save_to_db(number, num_of_tries,'auto')
                 break

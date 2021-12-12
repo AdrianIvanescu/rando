@@ -26,7 +26,6 @@ class MagicTable(DbConnection):
         row_id INTEGER PRIMARY KEY AUTOINCREMENT,
         source CHAR(10) NOT NULL,
         magic_number INT(3) NOT NULL,
-        initial_guess INT(30) NOT NULL,
         number_of_tries INT(2) NOT NULL,
         created_on text
         );

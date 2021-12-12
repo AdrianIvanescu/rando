@@ -36,5 +36,5 @@ class MagicNumberUser:
                 num_of_tries += 1
             if didWeGuess(number,int_answer):
                 print_win(int_answer)
-                save_to_db(number, int_answer, num_of_tries,'user')
+                save_to_db(number, num_of_tries,'user')
                 break
