@@ -27,4 +27,7 @@ pip uninstall magic_number
 ### Help
 To run the CLI - in Terminal/Cmd - run `magic_number`. To access help - type ? or help
 
+![magic_number](https://user-images.githubusercontent.com/91798167/145708919-0a8eecb9-979c-4339-88d7-8c4afb9de0ce.png)
+
+
 **Free Software, Hell Yeah!**
