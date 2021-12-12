@@ -34,9 +34,10 @@ class MagicTable:
         sql = f"""
         CREATE TABLE IF NOT EXISTS {self.table_name}(
         id INTEGER PRIMARY KEY AUTOINCREMENT,
-        magic_number INT(3) NOT NULL,
-        initial_guess INT(30) NOT NULL,
         source CHAR(10) NOT NULL,
+        magic_number INT(3) NOT NULL,
+        was_guess INT(1),
+        initial_guess INT(30) NOT NULL,
         number_of_tries INT(2) NOT NULL
         )
         """
