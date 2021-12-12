@@ -6,6 +6,7 @@ from cmd import Cmd
 from magic_number.magic_number_auto import MagicNumberAuto
 from magic_number.magic_number_user import MagicNumberUser
 from db_layer.create_table import MagicTable
+
  
 toolversion = f"v{version.__version__}"
 

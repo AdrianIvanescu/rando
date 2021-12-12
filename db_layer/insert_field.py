@@ -1,6 +1,27 @@
-import sqlite3
-import os
-from colorama.ansi import Fore, Style
 
-def insert_field(table_name, colum_name, file_name):
-    pass
+from db_layer.create_table import MagicTable
+from colorama.ansi import Fore, Style
+from datetime import datetime
+
+
+def save_to_db(number, initial_answer, num_of_tries,source):
+        created_on = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        save_info = InsertField('magic_number','run_times')
+        save_info.open_db_connection()
+        save_info.insert_field(source,number,initial_answer,num_of_tries,created_on)
+        save_info.commit_db_change()
+        save_info.close_db_connection()
+
+class InsertField(MagicTable):
+    def __init__(self,db_name,table_name):
+        self.db_name = db_name
+        self.table_name = table_name
+
+    def insert_field(self,source,magic_number,initial_guess,number_of_tries,created_on):
+        sql = f"""
+        INSERT INTO {self.table_name} (source,magic_number,initial_guess,number_of_tries,created_on)
+        VALUES ('{source}','{magic_number}','{initial_guess}','{number_of_tries}','{created_on}');
+        """
+        self.execute_sql(sql)
+
+
