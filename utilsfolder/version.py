@@ -11,4 +11,4 @@ MINOR version when you add backwards compatible functionality,
 PATCH version when you make backwards compatible bug fixes.
 """
 __version__branch__ = "main"
-__version__ = "0.1.0"
+__version__ = "0.2.0"
