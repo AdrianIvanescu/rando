@@ -1,0 +1,9 @@
+# OS files:
+Thumbs.db
+.DS_Store
+
+# db
+magic_number.db
+
+# tests
+.tox

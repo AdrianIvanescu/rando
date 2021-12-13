@@ -1,0 +1,14 @@
+{
+  "python.formatting.provider": "black",
+  "python.testing.unittestArgs": [
+    "-v",
+    "-s",
+    "./tests",
+    "-p",
+    "test_*.py",
+    "${workspaceFolder}/tests/unittest/"
+  ],
+  "python.testing.pytestEnabled": false,
+  "python.testing.unittestEnabled": true,
+  "python.analysis.extraPaths": ["./utilsfolder"]
+}
