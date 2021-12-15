@@ -4,6 +4,8 @@ setup.py
 db_layer/__init__.py
 db_layer/create_table.py
 db_layer/db_connection.py
+db_layer/db_dump.py
+db_layer/drop_table.py
 db_layer/insert_field.py
 db_layer/open_file.py
 magic_number/__init__.py
@@ -17,7 +19,6 @@ magic_number.egg-info/entry_points.txt
 magic_number.egg-info/requires.txt
 magic_number.egg-info/top_level.txt
 utilsfolder/__init__.py
-utilsfolder/shell.py
+utilsfolder/magic_shell.py
 utilsfolder/utils.py
 utilsfolder/version.py
-venv/bin/activate_this.py

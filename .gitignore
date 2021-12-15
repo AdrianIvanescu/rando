@@ -4,6 +4,9 @@ Thumbs.db
 
 # db
 magic_number.db
+magic_number.sql
+magic_number_dumps
+magic_number_*.sql
 
 # tests
 .tox
