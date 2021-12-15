@@ -2,8 +2,9 @@
 creates a magic_number shell
 '''
 from cmd import Cmd
-
-from db_layer.create_table import MagicTable
+from db_layer.create_table import CreateTable
+from db_layer.db_dump import DbDump
+from db_layer.drop_table import DropTable
 from magic_number.magic_number_auto import MagicNumberAuto
 from magic_number.magic_number_user import MagicNumberUser
 from utilsfolder import version
@@ -47,23 +48,25 @@ class MyPrompt(Cmd):
         return message
 
     def do_create_table(self, inp):
-        table = MagicTable('magic_number', 'run_times')
-        table.open_db_connection()
+        table = CreateTable('magic_number', 'run_times')
         table.create_table()
-        table.commit_db_change()
-        table.close_db_connection()
 
     def help_create_table(self):
         print('create a sqlite3 table: magic_db.run_times')
 
     def do_drop_table(self, inp):
-        table = MagicTable('magic_number', 'run_times')
-        table.open_db_connection()
-        table.drop_table()
-        table.close_db_connection()
+        table = DropTable('magic_number', 'run_times')
+        table.drop_execute()
 
     def help_drop_table(self):
         print('drop a sqlite3 table: magic_db.run_times')
+
+    def do_dump_table(self, inp):
+        dump_db = DbDump('magic_number')
+        dump_db.dump_execute()
+
+    def help_dump_table(self):
+        print('create a sqlite3 dump for table: magic_db.run_times')
 
     def emptyline(self):
         pass

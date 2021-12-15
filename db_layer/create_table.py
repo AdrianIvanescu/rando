@@ -4,20 +4,10 @@ from colorama.ansi import Style
 from db_layer.db_connection import DbConnection
 
 
-class MagicTable(DbConnection):
+class CreateTable():
     def __init__(self, db_name, table_name):
-        self.db_name = db_name
         self.table_name = table_name
-
-    def commit_db_change(self):
-        # commit your changes in the database
-        self.conn.commit()
-
-    def execute_sql(self, sql):
-        try:
-            self.cursor.execute(sql)
-        except Exception as e:
-            print('An exception occured >>', e)
+        self.db_conn = DbConnection(db_name)
 
     def create_table(self):
         # create table as per requirement
@@ -30,17 +20,11 @@ class MagicTable(DbConnection):
         created_on text
         );
         """
-        self.execute_sql(sql)
+        self.db_conn.open_db_connection()
+        self.db_conn.execute_sql(sql)
+        self.db_conn.commit_db_change()
+        self.db_conn.close_db_connection
         print(
             f'''>> The table {Fore.GREEN}{self.table_name}{Style.RESET_ALL} \
 created successfully...'''
-        )
-
-    def drop_table(self):
-        # drop table if already exists.
-        sql = f"DROP TABLE IF EXISTS {self.table_name}"
-        self.execute_sql(sql)
-        print(
-            f'''>> The table {Fore.GREEN}{self.table_name}{Style.RESET_ALL} \
-was drop successfully...'''
         )

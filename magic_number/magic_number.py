@@ -1,6 +1,6 @@
-from utilsfolder.shell import MyPrompt
+from utilsfolder.magic_shell import MyPrompt
 
 
 def main():
-    """ 'Start magic_number"""
+    """'Start magic_number"""
     MyPrompt().cmdloop()

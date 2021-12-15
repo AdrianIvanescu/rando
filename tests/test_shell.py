@@ -1,6 +1,6 @@
 import unittest
 
-from utilsfolder.shell import MyPrompt
+from utilsfolder.magic_shell import MyPrompt
 
 message_auto = 'generate random number and let the "machine" to guess it'
 message_user = 'generate random number and let the "user" to guess it'
