@@ -6,6 +6,7 @@ from db_layer.create_table import CreateTable
 from db_layer.db_dump import DbDump
 from db_layer.drop_table import DropTable
 from magic_number.magic_number_auto import MagicNumberAuto
+from magic_number.magic_number_binary import MagicNumberBinary
 from magic_number.magic_number_user import MagicNumberUser
 from utilsfolder import version
 
@@ -28,6 +29,15 @@ class MyPrompt(Cmd):
         if inp == 'x' or inp == 'q':
             return self.do_exit(inp)
         print(self.intro)
+
+    def do_guess_binary(self, inp):
+        number = MagicNumberBinary(1, 100)
+        number.guess_number_binary()
+
+    def help_guess_binary(self) -> str:
+        message = ('does a binary search')
+        print(message)
+        return message
 
     def do_guess_auto(self, inp):
         number = MagicNumberAuto(1, 100)
