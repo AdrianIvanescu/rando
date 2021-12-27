@@ -1,4 +1,6 @@
-from colorama.ansi import Fore, Style
+from colorama.ansi import Fore
+from colorama.ansi import Style
+
 from db_layer.db_connection import DbConnection
 from db_layer.db_dump import DbDump
 

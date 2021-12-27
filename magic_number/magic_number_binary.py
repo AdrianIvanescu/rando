@@ -41,7 +41,7 @@ class MagicNumberBinary:
                 print_number(answer, "higher")
                 num_of_tries += 1
                 print_line()
-           
+
             if didWeGuess(number, answer):
                 print_win(answer)
                 save_to_db(number, num_of_tries, "binary")

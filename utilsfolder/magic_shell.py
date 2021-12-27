@@ -2,6 +2,7 @@
 creates a magic_number shell
 '''
 from cmd import Cmd
+
 from db_layer.create_table import CreateTable
 from db_layer.db_dump import DbDump
 from db_layer.drop_table import DropTable
