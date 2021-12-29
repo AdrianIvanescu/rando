@@ -11,4 +11,4 @@ magic_number_*.sql
 # tests
 .tox
 
-magic_number.egg-info
+magic_number.egg-info/
