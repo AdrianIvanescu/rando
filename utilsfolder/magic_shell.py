@@ -5,6 +5,7 @@ from cmd import Cmd
 
 from db_layer.create_table import CreateTable
 from db_layer.db_dump import DbDump
+from db_layer.display_table import DisplayTable
 from db_layer.drop_table import DropTable
 from magic_number.magic_number_auto import MagicNumberAuto
 from magic_number.magic_number_binary import MagicNumberBinary
@@ -78,6 +79,13 @@ class MyPrompt(Cmd):
 
     def help_dump_table(self):
         print('create a sqlite3 dump for table: magic_db.run_times')
+
+    def do_display_run_times(self, inp):
+        table = DisplayTable('magic_number', 'run_times')
+        table.show_table()
+
+    def help_display_run_times(self):
+        print('read and display from table: magic_db.run_times')
 
     def emptyline(self):
         pass

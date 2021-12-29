@@ -5,12 +5,14 @@ db_layer/__init__.py
 db_layer/create_table.py
 db_layer/db_connection.py
 db_layer/db_dump.py
+db_layer/display_table.py
 db_layer/drop_table.py
 db_layer/insert_field.py
 db_layer/open_file.py
 magic_number/__init__.py
 magic_number/magic_number.py
 magic_number/magic_number_auto.py
+magic_number/magic_number_binary.py
 magic_number/magic_number_user.py
 magic_number.egg-info/PKG-INFO
 magic_number.egg-info/SOURCES.txt
